@@ -19,10 +19,11 @@ requires 1 <= a
 }
 
 
-/*method RequiredStudyTime'(c:nat) returns (hours: nat)
+method RequiredStudyTime'(c:nat) returns (hours: nat)
 
 method Outer'(a: nat)
-decreases a
+requires 0 <= a
+decreases a - 1
 {
     if a != 0 {
         var b := RequiredStudyTime'(a-1);
@@ -31,12 +32,12 @@ decreases a
 }
 
 method Inner'(a: nat, b: nat)
-requires 1 <= a
-decreases b
+requires 0 <= a
+decreases a, b
 {
     if b==0 {
         Outer'(a);
     } else {
         Inner'(a, b-1);
     }
-}*/
+}
