@@ -22,7 +22,6 @@ requires 1 <= a
 method RequiredStudyTime'(c:nat) returns (hours: nat)
 
 method Outer'(a: nat)
-requires 0 <= a
 decreases a - 1
 {
     if a != 0 {
@@ -32,7 +31,6 @@ decreases a - 1
 }
 
 method Inner'(a: nat, b: nat)
-requires 0 <= a
 decreases a, b
 {
     if b==0 {
