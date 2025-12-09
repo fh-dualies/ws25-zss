@@ -1,3 +1,4 @@
+/**
 predicate isMatch(mystringOne: string, offset : int, length : int, mystringTwo : string) 
 requires offset >= 0
 requires length <= offset
@@ -66,3 +67,4 @@ method stringMatch(thestring: string, pattern: string) returns (start : int)
         }
 		return -1;	
 }
+*/
