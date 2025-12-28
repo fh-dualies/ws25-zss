@@ -24,8 +24,17 @@ TypeOK == /\ pos \in [Actors -> Places]
           
 Other(p) == IF p = ProximaCentauri THEN Enceladus ELSE ProximaCentauri
 
+NoBeefPos(p) == 
+    /\ ~(p[Knork] = ProximaCentauri /\ p[Glubsch] = ProximaCentauri /\ p[Bob] # ProximaCentauri)
+    /\ ~(p[Glubsch] = ProximaCentauri /\ p[Fruntz] = ProximaCentauri /\ p[Bob] # ProximaCentauri)
 
-SpaceshipBobAlone == /\ pos' = [pos EXCEPT ![Bob] = Other(pos[Bob])]
+    /\ ~(p[Knork] = Enceladus /\ p[Glubsch] = Enceladus /\ p[Bob] # Enceladus)
+    /\ ~(p[Glubsch] = Enceladus /\ p[Fruntz] = Enceladus /\ p[Bob] # Enceladus)
+
+SpaceshipBobAlone == 
+    /\ NoBeefPos(pos)
+    /\ pos' = [pos EXCEPT ![Bob] = Other(pos[Bob])]
+    /\ NoBeefPos(pos') 
                          
 SpaceshipWithPassenger(x) == 
     /\ x \in Actors \ {Bob}
@@ -33,17 +42,19 @@ SpaceshipWithPassenger(x) ==
     /\ pos' = [pos EXCEPT 
                 ![Bob] = Other(pos[Bob]), 
                 ![x] = Other(pos[x])]
+    /\ NoBeefPos(pos')
 
-Nobeef == 
-    /\ ~(pos[Knork] = ProximaCentauri /\ pos[Glubsch] = ProximaCentauri /\ pos[Bob] # ProximaCentauri)
-    /\ ~(pos[Glubsch] = ProximaCentauri /\ pos[Fruntz] = ProximaCentauri /\ pos[Bob] # ProximaCentauri)
+Nobeef == NoBeefPos(pos)
 
-    /\ ~(pos[Knork] = Enceladus /\ pos[Glubsch] = Enceladus /\ pos[Bob] # Enceladus)
-    /\ ~(pos[Glubsch] = Enceladus /\ pos[Fruntz] = Enceladus /\ pos[Bob] # Enceladus)
+Next == SpaceshipBobAlone \/ (\E x \in Actors \ {Bob} : SpaceshipWithPassenger(x))
 
-Next ==
-    /\ Nobeef
-    /\ (SpaceshipBobAlone \/ \E x \in Actors \ {Bob} : SpaceshipWithPassenger(x))
+Impossible == 
+    ~(
+        pos[Glubsch] = Enceladus
+        /\ pos[Knork] = Enceladus
+        /\ pos[Fruntz] = Enceladus
+     )
+
 
 Spec == 
     Init /\ [][Next]_pos
