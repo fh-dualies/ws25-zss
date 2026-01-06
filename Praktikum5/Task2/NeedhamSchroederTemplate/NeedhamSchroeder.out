@@ -2,7 +2,7 @@
 TLC2 Version 2.20 of Day Month 20?? (rev: bb62e53)
 @!@!@ENDMSG 2262 @!@!@
 @!@!@STARTMSG 2187:0 @!@!@
-Running breadth-first search Model-Checking with fp 74 and seed 493948503896126798 with 1 worker on 8 cores with 3641MB heap and 64MB offheap memory [pid: 11448] (Mac OS X 26.1 aarch64, Oracle Corporation 22.0.1 x86_64, MSBDiskFPSet, DiskStateQueue).
+Running breadth-first search Model-Checking with fp 81 and seed -7358308045369432270 with 1 worker on 8 cores with 3641MB heap and 64MB offheap memory [pid: 21940] (Mac OS X 26.1 aarch64, Oracle Corporation 22.0.1 x86_64, MSBDiskFPSet, DiskStateQueue).
 @!@!@ENDMSG 2187 @!@!@
 @!@!@STARTMSG 2220:0 @!@!@
 Starting SANY...
@@ -14,13 +14,13 @@ Linting of module NeedhamSchroeder
 SANY finished.
 @!@!@ENDMSG 2219 @!@!@
 @!@!@STARTMSG 2185:0 @!@!@
-Starting... (2026-01-02 20:15:52)
+Starting... (2026-01-06 11:25:03)
 @!@!@ENDMSG 2185 @!@!@
 @!@!@STARTMSG 2189:0 @!@!@
 Computing initial states...
 @!@!@ENDMSG 2189 @!@!@
 @!@!@STARTMSG 2190:0 @!@!@
-Finished computing initial states: 1 distinct state generated at 2026-01-02 20:15:52.
+Finished computing initial states: 1 distinct state generated at 2026-01-06 11:25:03.
 @!@!@ENDMSG 2190 @!@!@
 @!@!@STARTMSG 2193:0 @!@!@
 Model checking completed. No error has been found.
@@ -29,7 +29,7 @@ Model checking completed. No error has been found.
   calculated (optimistic):  val = 0.0
 @!@!@ENDMSG 2193 @!@!@
 @!@!@STARTMSG 2201:0 @!@!@
-The coverage statistics at 2026-01-02 20:15:52 (see https://explain.tlapl.us/module-coverage-statistics for how to interpret the following statistics).
+The coverage statistics at 2026-01-06 11:25:03 (see https://explain.tlapl.us/module-coverage-statistics for how to interpret the following statistics).
 @!@!@ENDMSG 2201 @!@!@
 @!@!@STARTMSG 2779:0 @!@!@
 <msgs line 15, col 49 to line 15, col 52 of module NeedhamSchroeder>: 5
@@ -119,7 +119,19 @@ The coverage statistics at 2026-01-02 20:15:52 (see https://explain.tlapl.us/mod
   |line 37, col 28 to line 37, col 57 of module NeedhamSchroeder: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 38, col 28 to line 38, col 62 of module NeedhamSchroeder: 1
+  line 38, col 28 to line 38, col 189 of module NeedhamSchroeder: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 38, col 36 to line 38, col 189 of module NeedhamSchroeder: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 38, col 36 to line 38, col 39 of module NeedhamSchroeder: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2775:0 @!@!@
+  ||line 38, col 46 to line 38, col 189 of module NeedhamSchroeder: 1:2
+@!@!@ENDMSG 2775 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 38, col 47 to line 38, col 187 of module NeedhamSchroeder: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   line 35, col 33 to line 35, col 36 of module NeedhamSchroeder: 4
@@ -128,127 +140,112 @@ The coverage statistics at 2026-01-02 20:15:52 (see https://explain.tlapl.us/mod
   line 39, col 22 to line 39, col 45 of module NeedhamSchroeder: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 40, col 22 to line 40, col 167 of module NeedhamSchroeder: 1
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |line 40, col 30 to line 40, col 167 of module NeedhamSchroeder: 1
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  ||line 40, col 30 to line 40, col 33 of module NeedhamSchroeder: 1
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2775:0 @!@!@
-  ||line 40, col 40 to line 40, col 167 of module NeedhamSchroeder: 1:2
-@!@!@ENDMSG 2775 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |||line 40, col 41 to line 40, col 165 of module NeedhamSchroeder: 1
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 42, col 22 to line 42, col 51 of module NeedhamSchroeder: 1
+  line 41, col 22 to line 41, col 61 of module NeedhamSchroeder: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<AliceSendsMsgThree line 44, col 1 to line 44, col 18 of module NeedhamSchroeder>: 1:1
+<AliceSendsMsgThree line 43, col 1 to line 43, col 18 of module NeedhamSchroeder>: 1:1
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 44, col 26 to line 44, col 48 of module NeedhamSchroeder: 8
+  line 43, col 26 to line 43, col 48 of module NeedhamSchroeder: 8
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 44, col 26 to line 44, col 32 of module NeedhamSchroeder: 7
+  |line 43, col 26 to line 43, col 32 of module NeedhamSchroeder: 7
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 45, col 51 to line 45, col 72 of module NeedhamSchroeder: 6
+  line 44, col 51 to line 44, col 72 of module NeedhamSchroeder: 6
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 45, col 51 to line 45, col 62 of module NeedhamSchroeder: 5
+  |line 44, col 51 to line 44, col 62 of module NeedhamSchroeder: 5
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 46, col 36 to line 46, col 52 of module NeedhamSchroeder: 3
+  line 45, col 36 to line 45, col 52 of module NeedhamSchroeder: 3
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 46, col 36 to line 46, col 43 of module NeedhamSchroeder: 2
+  |line 45, col 36 to line 45, col 43 of module NeedhamSchroeder: 2
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 47, col 36 to line 47, col 75 of module NeedhamSchroeder: 2
+  line 46, col 36 to line 46, col 75 of module NeedhamSchroeder: 2
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 47, col 36 to line 47, col 65 of module NeedhamSchroeder: 1
+  |line 46, col 36 to line 46, col 65 of module NeedhamSchroeder: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 48, col 36 to line 48, col 69 of module NeedhamSchroeder: 2
+  line 47, col 36 to line 47, col 69 of module NeedhamSchroeder: 2
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 48, col 36 to line 48, col 58 of module NeedhamSchroeder: 1
+  |line 47, col 36 to line 47, col 58 of module NeedhamSchroeder: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 49, col 36 to line 49, col 195 of module NeedhamSchroeder: 1
+  line 48, col 36 to line 48, col 195 of module NeedhamSchroeder: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 49, col 44 to line 49, col 195 of module NeedhamSchroeder: 1
+  |line 48, col 44 to line 48, col 195 of module NeedhamSchroeder: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 49, col 44 to line 49, col 47 of module NeedhamSchroeder: 1
+  ||line 48, col 44 to line 48, col 47 of module NeedhamSchroeder: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2775:0 @!@!@
-  ||line 49, col 54 to line 49, col 195 of module NeedhamSchroeder: 1:2
+  ||line 48, col 54 to line 48, col 195 of module NeedhamSchroeder: 1:2
 @!@!@ENDMSG 2775 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 49, col 55 to line 49, col 194 of module NeedhamSchroeder: 1
+  |||line 48, col 55 to line 48, col 194 of module NeedhamSchroeder: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 50, col 33 to line 50, col 49 of module NeedhamSchroeder: 1
+  line 49, col 33 to line 49, col 49 of module NeedhamSchroeder: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 51, col 33 to line 51, col 72 of module NeedhamSchroeder: 1
+  line 50, col 33 to line 50, col 72 of module NeedhamSchroeder: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 45, col 44 to line 45, col 47 of module NeedhamSchroeder: 4
+  line 44, col 44 to line 44, col 47 of module NeedhamSchroeder: 4
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<BobReceivesMsgThree line 53, col 1 to line 53, col 19 of module NeedhamSchroeder>: 1:1
+<BobReceivesMsgThree line 52, col 1 to line 52, col 19 of module NeedhamSchroeder>: 1:1
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 53, col 27 to line 53, col 49 of module NeedhamSchroeder: 8
+  line 52, col 27 to line 52, col 49 of module NeedhamSchroeder: 8
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 53, col 27 to line 53, col 33 of module NeedhamSchroeder: 7
+  |line 52, col 27 to line 52, col 33 of module NeedhamSchroeder: 7
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 55, col 44 to line 55, col 63 of module NeedhamSchroeder: 6
+  line 54, col 44 to line 54, col 63 of module NeedhamSchroeder: 6
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 55, col 44 to line 55, col 55 of module NeedhamSchroeder: 5
+  |line 54, col 44 to line 54, col 55 of module NeedhamSchroeder: 5
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 56, col 32 to line 56, col 48 of module NeedhamSchroeder: 4
+  line 55, col 32 to line 55, col 48 of module NeedhamSchroeder: 4
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 56, col 32 to line 56, col 39 of module NeedhamSchroeder: 3
+  |line 55, col 32 to line 55, col 39 of module NeedhamSchroeder: 3
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 57, col 32 to line 57, col 69 of module NeedhamSchroeder: 2
+  line 56, col 32 to line 56, col 69 of module NeedhamSchroeder: 2
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 57, col 32 to line 57, col 61 of module NeedhamSchroeder: 1
+  |line 56, col 32 to line 56, col 61 of module NeedhamSchroeder: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 58, col 32 to line 58, col 65 of module NeedhamSchroeder: 2
+  line 57, col 32 to line 57, col 65 of module NeedhamSchroeder: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 57, col 32 to line 57, col 54 of module NeedhamSchroeder: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 58, col 32 to line 58, col 62 of module NeedhamSchroeder: 2
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
   |line 58, col 32 to line 58, col 54 of module NeedhamSchroeder: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 59, col 32 to line 59, col 62 of module NeedhamSchroeder: 2
+  line 59, col 26 to line 59, col 42 of module NeedhamSchroeder: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 59, col 32 to line 59, col 54 of module NeedhamSchroeder: 1
+  line 61, col 26 to line 61, col 71 of module NeedhamSchroeder: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 60, col 26 to line 60, col 42 of module NeedhamSchroeder: 1
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 62, col 26 to line 62, col 71 of module NeedhamSchroeder: 1
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 55, col 37 to line 55, col 40 of module NeedhamSchroeder: 2
+  line 54, col 37 to line 54, col 40 of module NeedhamSchroeder: 2
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2774:0 @!@!@
 <TypeOk line 17, col 1 to line 17, col 6 of module NeedhamSchroeder>
@@ -260,7 +257,7 @@ The coverage statistics at 2026-01-02 20:15:52 (see https://explain.tlapl.us/mod
 End of statistics.
 @!@!@ENDMSG 2202 @!@!@
 @!@!@STARTMSG 2200:0 @!@!@
-Progress(5) at 2026-01-02 20:15:52: 7 states generated (1.414 s/min), 7 distinct states found (1.414 ds/min), 0 states left on queue.
+Progress(5) at 2026-01-06 11:25:03: 7 states generated (1.473 s/min), 7 distinct states found (1.473 ds/min), 0 states left on queue.
 @!@!@ENDMSG 2200 @!@!@
 @!@!@STARTMSG 2199:0 @!@!@
 7 states generated, 7 distinct states found, 0 states left on queue.
@@ -272,5 +269,5 @@ The depth of the complete state graph search is 5.
 The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 3 and the 95th percentile is 3).
 @!@!@ENDMSG 2268 @!@!@
 @!@!@STARTMSG 2186:0 @!@!@
-Finished in 299ms at (2026-01-02 20:15:52)
+Finished in 286ms at (2026-01-06 11:25:03)
 @!@!@ENDMSG 2186 @!@!@
