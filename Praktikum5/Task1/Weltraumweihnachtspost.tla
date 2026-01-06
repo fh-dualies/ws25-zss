@@ -37,6 +37,7 @@ SpaceshipBobAlone ==
     /\ NoBeefPos(pos') 
                          
 SpaceshipWithPassenger(x) == 
+    /\ NoBeefPos(pos)
     /\ x \in Actors \ {Bob}
     /\ pos[x] = pos[Bob]
     /\ pos' = [pos EXCEPT 
