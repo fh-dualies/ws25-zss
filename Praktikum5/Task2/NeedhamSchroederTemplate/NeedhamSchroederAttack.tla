@@ -47,6 +47,7 @@ BobSendsMsgTwo == /\ StatusB = "WaitForMsg1"
                   /\ \E msg \in msgs : msg.receiver = "Bob"
                         /\ msg.type = "msg1"
                         /\ msg.encryptedData.encryptedFor = "Bob"
+                        /\ msg.encryptedData.data1 = "NonceA"
                         /\ msgs' = msgs \cup { [receiver |-> msg.encryptedData.data2, type |-> "msg2", encryptedData |-> [encryptedFor |-> msg.encryptedData.data2, data1 |-> msg.encryptedData.data1, data2 |-> "NonceB"]] }
                   /\ StatusB' = "WaitForMsg3"
                  (*New*)
@@ -92,25 +93,22 @@ KnownNonces == IF IntruderKnowsNonceA THEN (IF IntruderKnowsNonceB  THEN {"Nonce
 
 IntruderSendsMessageOne == (*New*)
                         /\ \E nonce \in KnownNonces :
-                            \E agent \in {"Alice", "Bob"} :
-                                /\ msgs' = msgs \cup {[receiver |-> "Bob", type |-> "msg1", encryptedData |-> [encryptedFor |-> agent, data1 |-> nonce, data2 |-> "Alice"] ]}
+                            /\ msgs' = msgs \cup {[receiver |-> "Bob", type |-> "msg1", encryptedData |-> [encryptedFor |-> "Bob", data1 |-> nonce, data2 |-> "Alice"] ]}
                            (*New*)
                         /\ UNCHANGED<<StatusA, StatusB, PartnerA, PartnerB, IntruderKnowsNonceA, IntruderKnowsNonceB>>
                                                   
 IntruderSendsMessageTwo == (*New*)
                         /\ \E nonce \in KnownNonces : 
-                            \E agent \in {"Alice", "Bob"} :
-                                /\ msgs' = msgs \cup { [receiver |-> "Alice", type |-> "msg2", encryptedData |-> [encryptedFor |-> agent, data1 |-> nonce, data2 |-> nonce]] }
+                            /\ \E nonce2 \in KnownNonces : 
+                                /\ msgs' = msgs \cup { [receiver |-> "Alice", type |-> "msg2", encryptedData |-> [encryptedFor |-> "Alice", data1 |-> nonce, data2 |-> nonce2]] }
                             (*New*)
                         /\ UNCHANGED<<StatusA, StatusB, PartnerA, PartnerB, IntruderKnowsNonceA, IntruderKnowsNonceB>>                        
 
 IntruderSendsMessageThree == (*New*)
                         /\ \E nonce \in KnownNonces : 
-                            \E agent \in {"Alice", "Bob"} : 
-                                /\ msgs' = msgs \cup { [receiver |-> "Bob", type |-> "msg3", encryptedData |-> [encryptedFor |-> agent, data1 |-> nonce, data2 |-> ""]] }
+                            /\ msgs' = msgs \cup { [receiver |-> "Bob", type |-> "msg3", encryptedData |-> [encryptedFor |-> "Bob", data1 |-> nonce, data2 |-> ""]] }
                         (*New*)
-                        /\ UNCHANGED<<StatusA, StatusB, PartnerA, PartnerB, IntruderKnowsNonceA, IntruderKnowsNonceB>>                        
-
+                        /\ UNCHANGED<<StatusA, StatusB, PartnerA, PartnerB, IntruderKnowsNonceA, IntruderKnowsNonceB>>  
 
 Next == \/ AliceSendsMsgOne
         \/ BobSendsMsgTwo

@@ -35,7 +35,7 @@ BobSendsMsgTwo == /\ StatusB = "WaitForMsg1"
                   /\ \E msg \in msgs : msg.receiver = "Bob"
                         /\ msg.type = "msg1"
                         /\ msg.encryptedData.encryptedFor = "Bob"
-                        /\ msgs' = msgs \cup {[receiver |-> msg.encryptedData.data2, type |-> "msg2", encryptedData |-> [encryptedFor |-> "Alice", data1 |-> "NonceA", data2 |-> "NonceB"]] } 
+                        /\ msgs' = msgs \cup {[receiver |-> msg.encryptedData.data2, type |-> "msg2", encryptedData |-> [encryptedFor |-> "Alice", data1 |-> msg.encryptedData.data1, data2 |-> "NonceB"]] } 
                   /\ StatusB' = "WaitForMsg3"
                   (*New*)
                   /\ UNCHANGED<<StatusA, PartnerA, PartnerB>>                          

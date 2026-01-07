@@ -96,22 +96,20 @@ KnownNonces == IF IntruderKnowsNonceA THEN (IF IntruderKnowsNonceB  THEN {"Nonce
 
 IntruderSendsMessageOne == (*New*)
                         /\ \E nonce \in KnownNonces :
-                            \E agent \in {"Alice", "Bob"} :
-                                /\ msgs' = msgs \cup {[receiver |-> "Bob", type |-> "msg1", encryptedData |-> [encryptedFor |-> agent, data1 |-> nonce, data2 |-> "Alice", data3 |-> ""] ]}
+                            /\ msgs' = msgs \cup {[receiver |-> "Bob", type |-> "msg1", encryptedData |-> [encryptedFor |-> "Bob", data1 |-> nonce, data2 |-> "Alice", data3 |-> ""] ]}
                            (*New*)
                         /\ UNCHANGED<<StatusA, StatusB, PartnerA, PartnerB, IntruderKnowsNonceA, IntruderKnowsNonceB, firstReceiver>>
                                                   
 IntruderSendsMessageTwo == (*New*)
                         /\ \E nonce \in KnownNonces : 
-                            \E agent \in {"Alice", "Bob"} :
-                                /\ msgs' = msgs \cup { [receiver |-> "Alice", type |-> "msg2", encryptedData |-> [encryptedFor |-> agent, data1 |-> nonce, data2 |-> nonce, data3 |-> "Bob"]] }
+                            /\ \E nonce2 \in KnownNonces : 
+                                /\ msgs' = msgs \cup { [receiver |-> "Alice", type |-> "msg2", encryptedData |-> [encryptedFor |-> "Alice", data1 |-> nonce, data2 |-> nonce2, data3 |-> "Bob"]] }
                             (*New*)
                         /\ UNCHANGED<<StatusA, StatusB, PartnerA, PartnerB, IntruderKnowsNonceA, IntruderKnowsNonceB, firstReceiver>>                        
 
 IntruderSendsMessageThree == (*New*)
                         /\ \E nonce \in KnownNonces : 
-                            \E agent \in {"Alice", "Bob"} : 
-                                /\ msgs' = msgs \cup { [receiver |-> "Bob", type |-> "msg3", encryptedData |-> [encryptedFor |-> agent, data1 |-> nonce, data2 |-> "", data3 |-> ""]] }
+                            /\ msgs' = msgs \cup { [receiver |-> "Bob", type |-> "msg3", encryptedData |-> [encryptedFor |-> "Bob", data1 |-> nonce, data2 |-> "", data3 |-> ""]] }
                         (*New*)
                         /\ UNCHANGED<<StatusA, StatusB, PartnerA, PartnerB, IntruderKnowsNonceA, IntruderKnowsNonceB, firstReceiver>>                        
 
